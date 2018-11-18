@@ -9,7 +9,13 @@ class Home extends StatelessWidget {
         child: Text(
           sayHello(),
           textDirection: TextDirection.ltr,
-          style: TextStyle(color: Colors.white, fontSize: 36.0),
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 36.0,
+            decoration: TextDecoration.none,
+            fontFamily: 'Lato',
+            fontWeight: FontWeight.normal
+          ),
         ),
       ),
     );
