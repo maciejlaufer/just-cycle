@@ -2,8 +2,13 @@ import 'package:flutter/material.dart';
 import './other_page.dart';
 import './delivery_cost.dart';
 import './customers_list.dart';
+import './camera_screen.dart';
 
 class AppDrawer extends StatefulWidget {
+  var cameras;
+
+  AppDrawer(this.cameras);
+
   @override
   State<StatefulWidget> createState() => _AppDrawerState();
 }
@@ -71,6 +76,15 @@ class _AppDrawerState extends State<AppDrawer>{
             onTap: (){
               Navigator.of(context).pop();
               Navigator.of(context).push(MaterialPageRoute( builder: (BuildContext context) => DeliveryCost()));
+            },
+          ),
+          Divider(),
+          ListTile(
+            title: Text("Camera"),
+            trailing: Icon(Icons.arrow_right),
+            onTap: (){
+              Navigator.of(context).pop();
+              Navigator.of(context).push(MaterialPageRoute( builder: (BuildContext context) => CameraScreen(widget.cameras)));
             },
           ),
           Divider(),

@@ -6,6 +6,10 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 class HomePage extends StatefulWidget {
+  var cameras;
+
+  HomePage(this.cameras);
+
   @override
   State<StatefulWidget> createState() => _HomePageState();
 }
@@ -32,7 +36,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-          drawer: AppDrawer(),
+          drawer: AppDrawer(widget.cameras),
           appBar: AppBar(
             title: Text('Just cycle'),
             backgroundColor: Colors.redAccent,

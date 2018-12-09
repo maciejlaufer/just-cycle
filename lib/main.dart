@@ -1,7 +1,14 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import './screens/home_page.dart';
+import 'package:camera/camera.dart';
 
-void main() => runApp(new JustCycleApp());
+List<CameraDescription> cameras;
+
+Future<Null> main() async { 
+  cameras = await availableCameras();
+  runApp(new JustCycleApp()); 
+}
 
 class JustCycleApp extends StatelessWidget {
   @override
@@ -9,7 +16,7 @@ class JustCycleApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Just cycle",
-      home: HomePage(),
+      home: HomePage(cameras),
       theme: ThemeData(
         brightness: Brightness.light,
         primaryColor: Colors.redAccent,
