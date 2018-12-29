@@ -3,6 +3,7 @@ import './other_page.dart';
 import './delivery_cost.dart';
 import './customers_list.dart';
 import './camera_screen.dart';
+import '../globals.dart' as globals;
 
 class AppDrawer extends StatefulWidget {
   var cameras;
@@ -15,8 +16,8 @@ class AppDrawer extends StatefulWidget {
 
 class _AppDrawerState extends State<AppDrawer>{
 
-  String currentShopName = "Current Shop";
-  String currentShopEmail = "current@shop.pl";
+  //String currentShopName = globals.;
+  String currentShopEmail = "";
   String shopIcon = "http://icon.touch-slide.jp/wp/wp-content/uploads/2012/07/s00037.jpg";
   String otherShopIcon = "https://t4.ftcdn.net/jpg/02/03/64/45/160_F_203644567_gkgQ5jfHL6q6PP7lAMHdS8IR3Pu2urSQ.jpg";
   bool isShopChoosed = true;
@@ -53,7 +54,7 @@ class _AppDrawerState extends State<AppDrawer>{
                 ),
               ),
             ] : <Widget>[],
-            accountName: this.isShopChoosed ? Text(currentShopName) : Container(),
+            accountName: this.isShopChoosed ? Text(globals.currentShopName) : Container(),
             accountEmail: this.isShopChoosed ? Text(currentShopEmail) : Container(),
             decoration: BoxDecoration(
               color: Colors.grey,
@@ -67,7 +68,7 @@ class _AppDrawerState extends State<AppDrawer>{
             trailing: Icon(Icons.arrow_right),
             onTap: () { 
               Navigator.of(context).pop();
-              Navigator.of(context).push(MaterialPageRoute( builder: (BuildContext context) => CustomersList(shopId: "1")));
+              Navigator.of(context).push(MaterialPageRoute( builder: (BuildContext context) => CustomersList(shopId: globals.currentShopId)));
             },
           ),
           ListTile(
@@ -81,7 +82,7 @@ class _AppDrawerState extends State<AppDrawer>{
           Divider(),
           ListTile(
             title: Text("Camera"),
-            trailing: Icon(Icons.arrow_right),
+            trailing: Icon(Icons.camera_alt),
             onTap: (){
               Navigator.of(context).pop();
               Navigator.of(context).push(MaterialPageRoute( builder: (BuildContext context) => CameraScreen(widget.cameras)));
