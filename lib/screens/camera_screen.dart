@@ -24,7 +24,6 @@ class _CameraScreenState extends State<CameraScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Container(
-              height: 300.0,
               padding: EdgeInsets.all(15.0),
               child: CameraApp(widget.cameras)
             )
