@@ -22,6 +22,7 @@ class _CustomersListState extends State<CustomersList> {
   String shopName = '';
   bool _isLoadingCustomers = true;
   List customersList = [];
+  String filter = '';
 
   String url = config.baseUrl + '/api/stores/' + globals.currentShopId.toString() + '/customers';
 
@@ -73,9 +74,9 @@ class _CustomersListState extends State<CustomersList> {
               decoration: InputDecoration(
                 hintText: 'Search customers... '
               ),
-              onChanged: (String newShopName){
+              onChanged: (String newCustomerName){
                 setState((){
-                  shopName = newShopName;
+                  filter = newCustomerName;
                 });
               },
             ),
@@ -88,7 +89,7 @@ class _CustomersListState extends State<CustomersList> {
                   child: ListView.builder(
                   itemCount: this.customersList == null ? 0 : this.customersList.length,
                   itemBuilder: (BuildContext context, int index) {
-                    return Container(
+                    return filter == null || filter == '' || (customersList[index]['fullName'] != null && customersList[index]['fullName'].toLowerCase().contains(filter)) ? Container(
                       child: Center(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -108,7 +109,7 @@ class _CustomersListState extends State<CustomersList> {
                           ],
                         )
                       )
-                    );
+                    ) : Container();
                   }),
                 )
               )
