@@ -18,7 +18,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final String url = 'http://192.168.1.11:61331/api/stores';
+  final String url = 'http://10.4.255.118:61331/api/stores';
   List shopData = [];
   List searchList = [];
   bool _isLoadingShops = true;
