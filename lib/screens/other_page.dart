@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/alert.dart';
 
 class OtherPage extends StatelessWidget{
 
@@ -13,7 +14,7 @@ class OtherPage extends StatelessWidget{
         title: Text(pageText)
       ),
       body: Center(
-        child: Text(pageText),
+        child: AlertButton(),
       )
     );
   }

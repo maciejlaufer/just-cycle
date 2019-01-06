@@ -81,6 +81,15 @@ class _AppDrawerState extends State<AppDrawer>{
           ),
           Divider(),
           ListTile(
+            title: Text("Other page"),
+            trailing: Icon(Icons.arrow_right),
+            onTap: (){
+              Navigator.of(context).pop();
+              Navigator.of(context).push(MaterialPageRoute( builder: (BuildContext context) => OtherPage('Other page')));
+            },
+          ),
+          Divider(),
+          ListTile(
             title: Text("Camera"),
             trailing: Icon(Icons.camera_alt),
             onTap: (){
