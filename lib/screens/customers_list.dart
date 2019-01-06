@@ -4,7 +4,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import '../globals.dart' as globals;
 import '../config.dart' as config;
-import 'loader.dart';
+import '../widgets/loader.dart';
 
 class CustomersList extends StatefulWidget {
   final int shopId;
@@ -119,51 +119,4 @@ class _CustomersListState extends State<CustomersList> {
       )
     );
   }
-
 }
-
-//   String sayHello(){
-//     String hello;
-//     hello = "Hello";
-//     DateTime now = DateTime.now();
-//     int hour = now.hour;
-//     int minute = now.minute;
-//     if(hour < 12){
-//       hello = "Good morning!";
-//     } else if(hour < 18){
-//       hello = "Good afternoon!";
-//     } else {
-//       hello = "Good evening!";
-//     }
-//     String minutes = (minute < 10) ? "0" + minute.toString() : minute.toString();
-//     return "It's " + hour.toString() + ":" + minutes + ". \n" + hello;
-//   }
-// }
-
-// class AlertButton extends StatelessWidget{
-//   @override
-//   Widget build(BuildContext context) {
-//     var button = Container( 
-//       padding: EdgeInsets.all(5.0),
-//       child: RaisedButton(
-//         child: Text("Click!"),
-//         color: Colors.blue,
-//         elevation: 5.0,
-//         onPressed: (){
-//           displayAlert(context);
-//         },
-//       )
-//     );
-//     return button;
-//   }
-//   void displayAlert(BuildContext context){
-//     var alert = AlertDialog(
-//       title: Text("Example title"),
-//       content: Text("Example content")
-//     );
-//     showDialog(
-//       context: context,
-//       builder: (BuildContext context) => alert
-//     );
-//   }
-// }

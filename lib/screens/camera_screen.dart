@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './camera.dart';
+import '../widgets/camera.dart';
 
 class CameraScreen extends StatefulWidget {
   var cameras;

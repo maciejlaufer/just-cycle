@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import '../globals.dart' as globals;
 import '../config.dart' as config;
-import 'loader.dart';
+import '../widgets/loader.dart';
 
 class HomePage extends StatefulWidget {
   var cameras;
